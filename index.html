@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Quiniela Mundial de Clubes 2025</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>⚽ ¡Demostrá que sos el mejor en predeciendo en el Mundial de Clubes 2025! 🏆</h1>
+    <p style="text-align:center; font-size:1.2em;">
+      Reta a tus amigos, sumá puntos y llevate el premio total. ¡Solo uno se corona campeón!
+    </p>
+    <p>Bienvenido a la <strong>Quiniela del Mundial de Clubes 2025</strong>. Participar es muy fácil y el premio será <strong>único</strong>, entregado al jugador que sume más puntos según sus aciertos. El monto del premio dependerá del dinero acumulado entre todos los participantes.</p>
+    <ul>
+      <li>📌 <strong>Costo de participación:</strong> Q15.00</li>
+      <li>📌 <strong>Fecha límite para ingresar tu quiniela:</strong> antes del primer partido de octavos de final.</li>
+      <li>📌 <strong>Primer partido:</strong> 28 de junio de 2025</li>
+    </ul>
+    <p>Se elaborará una tabla con el punteo de todos los participantes, actualizada en cada fase, hasta conocer al gran ganador.</p>
+
+    <h2>Reglas de puntaje</h2>
+    <ul>
+      <li>✅ 3 puntos por cada partido acertado.</li>
+      <li>🏅 5 puntos adicionales por acertar al campeón.</li>
+      <li>⚠️ Los goles que ingreses para cada partido no suman puntos, pero se usarán en caso de empate.</li>
+    </ul>
+
+    <h2>Fechas de cada operación</h2>
+    <ul>
+      <li>🗓️ <strong>Botón para llenar la quiniela disponible:</strong> 26 de junio de 2025.</li>
+      <li>⏰ <strong>Fecha límite:</strong> hasta antes del inicio del primer partido de octavos el 28 de junio de 2025.</li>
+    </ul>
+
+    <h2>Instrucciones de llenado de la quiniela</h2>
+    <ul>
+      <li>🔹 Presiona en el apartado <strong>Mostrar formulario de Quiniela.</strong></li>
+      <li>🔹 Ingresá tu nombre y la fecha de registro.</li>
+      <li>🔹 Elegí al ganador de cada partido haciendo <strong>click</strong> en el logo del equipo: El equipo que elijas avanza automáticamente a la siguiente fase.</li>
+      <li>🔹 Ingresá los goles de cada equipo (solo como referencia).</li>
+      <li>🔹 Seleccioná el campeón en la final.</li>
+      <li>🔹 Al terminar, presioná el botón <strong>"Guardar Quiniela"</strong>.</li>
+      <li>📸 Hacé una <strong>captura de pantalla</strong> de tu quiniela completa.</li>
+      <li>📲 Enviá la captura al <strong>grupo de WhatsApp</strong> oficial.</li>
+    </ul>
+
+    <hr style="margin-top: 50px;">
+    <h2 style="text-align:center;">Llenar mi Quiniela</h2>
+    <div style="text-align:center; margin-bottom:20px;">
+      <button onclick="document.getElementById('formularioQuiniela').style.display = 'block'; this.style.display='none';">
+        Mostrar Formulario de Quiniela
+      </button>
+    </div>
+    <div id="formularioQuiniela" style="display: none;">
+      <h1>Quiniela Mundial de Clubes 2025</h1>
+      <input type="text" id="nombre" placeholder="Nombre del participante" />
+      <input type="date" id="fecha" placeholder="Fecha de registro" />
+      <div class="bracket" id="contenedor"></div>
+      <button onclick="guardarQuiniela()">Guardar Quiniela</button>
+      <div id="resultado"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
