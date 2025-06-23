@@ -1,18 +1,21 @@
 body {
   background: linear-gradient(to bottom right, #001f3f, #0074D9);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #f;
+  color: #fff;
   margin: 0;
   padding: 20px;
+  background-image: url(assets/fondo_qui.png);
+  background-size: contain;
 }
 
 .container {
   max-width: 900px;
   margin: 0 auto;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(32, 20, 20, 0.6);
   padding: 40px;
   border-radius: 15px;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  
 }
 
 h1, h2 {
@@ -21,64 +24,14 @@ h1, h2 {
   margin-bottom: 10px;
 }
 
-h2 {
-  margin-top: 40px;
-}
-
-p, ul {
+ul {
   font-size: 1.1em;
   line-height: 1.7;
-}
-
-ul {
-  margin-top: 10px;
   padding-left: 25px;
 }
 
-.btn {
-  display: block;
-  width: 100%;
-  text-align: center;
-  margin-top: 40px;
-}
-
-.btn a {
-  background-color: #ffcc00;
-  color: #000;
-  padding: 15px 30px;
-  border: none;
-  border-radius: 10px;
-  font-weight: bold;
-  font-size: 1.1em;
-  text-decoration: none;
-  transition: background-color 0.3s;
-}
-
-.btn a:hover {
-  background-color: #ffc107;
-}
-
-.contacto {
-  margin-top: 50px;
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-}
-
-.contacto strong {
-  color: #ffcc00;
-}
-
-/* Formulario Quiniela Styles */
 #formularioQuiniela {
-  background-color: #002244;
-  padding: 20px;
-  zoom: 0.9;
-}
-
-h3 {
-  text-align: center;
+ 
 }
 
 .bracket {
@@ -129,14 +82,14 @@ h3 {
 }
 
 .marcadores input {
-  width: 48%;
+  width: 40%;
   text-align: center;
   font-weight: bold;
 }
 
 button {
+  margin: 20px auto;
   display: block;
-  margin: 30px auto 10px;
   padding: 10px 20px;
   background-color: #ffcc00;
   color: #000;

@@ -1,11 +1,11 @@
 const fases = {
   octavos: [
-    ['FC Porto', 'Atlético de Madrid'],
-    ['Bayern Munchen', 'Flamengo'],
+    ['FC Porto', 'Botafogo'],
+    ['Bayern Munchen', 'Chelsea FC'],
     ['Inter de Milan', 'Fluminense'],
     ['Manchester City', 'Al Hilal SFC'],
     ['Paris Saint-Germain', 'Palmeiras'],
-    ['Chelsea FC', 'SL Benfica'],
+    ['Flamengo', 'SL Benfica'],
     ['Borussia Dortmund', 'River Plate'],
     ['Real Madrid CF', 'Juventus FC']
   ],
@@ -16,7 +16,7 @@ const fases = {
 
 const logos = {
   "FC Porto": "assets/fc_porto.png",
-  "Atlético de Madrid": "assets/atletico_madrid.png",
+  "Botafogo": "assets/botafogo.png",
   "Bayern Munchen": "assets/bayern_munchen.png",
   "Flamengo": "assets/flamengo.png",
   "Inter de Milan": "assets/inter_milan.png",
@@ -45,7 +45,7 @@ function crearPartidos(fase, partidos) {
   divFase.appendChild(titulo);
 
   partidos.forEach((equipo, i) => {
-    const matchId = `${fase}${i+1}`;
+    const matchId = `${fase}${i + 1}`;
     const divMatch = document.createElement('div');
     divMatch.className = 'match';
     divMatch.setAttribute('data-match', matchId);
@@ -68,8 +68,8 @@ function crearPartidos(fase, partidos) {
     const divMarcadores = document.createElement('div');
     divMarcadores.className = 'marcadores';
     divMarcadores.innerHTML = `
-      <input type="number" id="m_${matchId}_a" placeholder="A" min="0">
-      <input type="number" id="m_${matchId}_b" placeholder="B" min="0">
+      <input type="number" id="m_${matchId}_a" placeholder="goles" min="0">
+      <input type="number" id="m_${matchId}_b" placeholder="goles" min="0">
     `;
 
     divMatch.appendChild(divMarcadores);
@@ -93,9 +93,9 @@ function actualizarFase(matchId) {
     const fase = fasesOrden[i];
     if (matchId.startsWith(fase)) {
       const index = parseInt(matchId.replace(fase, '')) - 1;
-      const nuevoFase = fasesOrden[i + 1];
+      const nuevaFase = fasesOrden[i + 1];
       const pos = Math.floor(index / 2);
-      fases[nuevoFase][pos][index % 2] = seleccionados[matchId];
+      fases[nuevaFase][pos][index % 2] = seleccionados[matchId];
       redibujar();
       break;
     }
@@ -103,23 +103,68 @@ function actualizarFase(matchId) {
 }
 
 function redibujar() {
+  const golesTemp = {};
+  const inputs = document.querySelectorAll('.marcadores input');
+  inputs.forEach(input => {
+    golesTemp[input.id] = input.value;
+  });
+
   document.getElementById('contenedor').innerHTML = '';
   for (const fase in fases) {
     crearPartidos(fase, fases[fase]);
+  }
+
+  for (const id in golesTemp) {
+    const input = document.getElementById(id);
+    if (input) {
+      input.value = golesTemp[id];
+    }
   }
 }
 
 function guardarQuiniela() {
   const nombre = document.getElementById('nombre').value || 'Participante';
-  let resumen = `<h2>Quiniela de ${nombre}</h2><h3>Marcadores:</h3><ul>`;
-  for (let matchId in seleccionados) {
-    const a = document.getElementById(`m_${matchId}_a`)?.value ?? '';
-    const b = document.getElementById(`m_${matchId}_b`)?.value ?? '';
-    resumen += `<li>${matchId.toUpperCase()}: ${a || 0} - ${b || 0} | Ganador: ${seleccionados[matchId]}</li>`;
+  const fecha = document.getElementById('fecha').value || 'Sin fecha';
+  const campeon = seleccionados['final1'] || 'No seleccionado';
+  const logo = logos[campeon] || '';
+
+  document.getElementById('resultado').innerHTML = `
+    <h2>Quiniela de ${nombre}</h2>
+    <p><strong>Fecha de registro:</strong> ${fecha}</p>
+    <p><strong>Campeón seleccionado:</strong> ${campeon}</p>
+    ${logo ? `<img src="${logo}" alt="${campeon}" style="width: 100px;">` : ''}
+  `;
+
+  let resumenHTML = `
+    <h1>Quiniela - Mundial de Clubes 2025</h1>
+    <p><strong>Participante:</strong> ${nombre}</p>
+    <p><strong>Fecha de registro:</strong> ${fecha}</p>
+    <h2>Predicciones por Fase</h2>
+  `;
+
+  const fasesOrden = ['octavos', 'cuartos', 'semis', 'final'];
+  fasesOrden.forEach(fase => {
+    resumenHTML += `<h3>${fase.charAt(0).toUpperCase() + fase.slice(1)}</h3><ul>`;
+    fases[fase].forEach((partido, i) => {
+      const matchId = `${fase}${i + 1}`;
+      const ganador = seleccionados[matchId];
+      if (partido[0] && partido[1]) {
+        resumenHTML += `<li><strong>${partido[0]}</strong> vs <strong>${partido[1]}</strong> → <span style="color:#ffcc00">${ganador || 'Sin seleccionar'}</span></li>`;
+      }
+    });
+    resumenHTML += `</ul>`;
+  });
+
+  resumenHTML += `<h2>Campeón: ${campeon}</h2>`;
+  if (logo) {
+    resumenHTML += `<img src="${logo}" alt="${campeon}" style="width: 120px;">`;
   }
-  resumen += "</ul>";
-  document.getElementById('resultado').innerHTML = resumen;
+
+  document.getElementById('resumenPDF').innerHTML = resumenHTML;
+  document.getElementById('resumenPDF').style.display = 'block';
 }
 
-// Inicializar
+
+
+// Inicializar al cargar
 redibujar();
