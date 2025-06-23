@@ -8,9 +8,9 @@
 </head>
 <body>
   <div class="container">
-    <h1>¡Demostrá que sos el mejor en predeciendo en el Mundial de Clubes 2025! 🏆</h1>
+    <h1>⚽ ¡Demostrá que sos el mejor prediciendo en el Mundial de Clubes 2025! 🏆</h1>
     <p style="text-align:center; font-size:1.2em;">
-      Reta a tus amigos, sumá puntos y llevate el premio total. ¡Solo uno se corona campeón!
+      Reta a tus amigos, sumá puntos y llevate el premio total. <strong>¡Solo uno se corona campeón!</strong>
     </p>
     <p>Bienvenido a la <strong>Quiniela del Mundial de Clubes 2025</strong>. Participar es muy fácil y el premio será <strong>único</strong>, entregado al jugador que sume más puntos según sus aciertos. El monto del premio dependerá del dinero acumulado entre todos los participantes.</p>
     <ul>
@@ -33,33 +33,63 @@
       <li>⏰ <strong>Fecha límite:</strong> hasta antes del inicio del primer partido de octavos el 28 de junio de 2025.</li>
     </ul>
 
-    <h2>Instrucciones de llenado de la quiniela</h2>
+    <h2>Instrucciones y pasos para llenar tu quiniela</h2>
     <ul>
-      <li>🔹 Presiona en el apartado <strong>Mostrar formulario de Quiniela.</strong></li>
-      <li>🔹 Ingresá tu nombre y la fecha de registro.</li>
-      <li>🔹 Elegí al ganador de cada partido haciendo <strong>click</strong> en el logo del equipo: El equipo que elijas avanza automáticamente a la siguiente fase.</li>
-      <li>🔹 Ingresá los goles de cada equipo (solo como referencia).</li>
-      <li>🔹 Seleccioná el campeón en la final.</li>
-      <li>🔹 Al terminar, presioná el botón <strong>"Guardar Quiniela"</strong>.</li>
-      <li>📸 Hacé una <strong>captura de pantalla</strong> de tu quiniela completa.</li>
-      <li>📲 Enviá la captura al <strong>grupo de WhatsApp</strong> oficial.</li>
+      <li>1. 🔘 Presioná el botón <strong>“Mostrar Formulario de Quiniela”</strong>
+Se abrirá el formulario interactivo para que ingreses tu predicción.</li>
+      <li>2. 📝 Ingresá tu nombre y la fecha actual
+
+Campo <b>“Nombre del participante”</b>
+
+Campo <b>“Fecha de registro”</b></li>
+      <li>3. 🏆 Seleccioná a los ganadores de cada partido
+
+En cada llave de la fase (octavos, cuartos, semis y final), hacé <b>clic</b> en el <b>logo</b> del equipo que creés que va a ganar.
+
+El equipo que elijas avanzará automáticamente a la siguiente ronda.</li>
+      <li>4. ⚽ Ingresá los goles de cada partido (opcional)
+
+Hay dos cajitas de <b>goles</b> por partido.
+
+Aunque los goles no dan puntos, se usarán solo en caso de empate entre participantes.
+
+Si no querés escribir goles, podés dejarlos en blanco o en 0.</li>
+      <li>5. 🏁 Seleccioná tu <b>campeón</b> en la final
+
+Solo se puede elegir uno.
+
+El campeón correcto otorga 5 puntos adicionales.</li>
+      <li>6. 💾 Presioná el botón <b>“Guardar Quiniela”</b>
+
+Se mostrará un resumen con tu nombre, la fecha y el campeón elegido.</li>
+      <li>7. 📸 Tomá una captura de pantalla de tu quiniela completa
+
+Esto sirve como comprobante visual.
+
+Asegurate de que se vean los equipos seleccionados en todas las fases y tu nombre.</li>
+      <li>8. 📲 Enviá la captura al grupo de WhatsApp oficial
+
+Esto confirma tu participación.
+
+Solo quinielas enviadas con captura serán válidas.</li>
     </ul>
 
     <hr style="margin-top: 50px;">
     <h2 style="text-align:center;">Llenar mi Quiniela</h2>
     <div style="text-align:center; margin-bottom:20px;">
       <button onclick="document.getElementById('formularioQuiniela').style.display = 'block'; this.style.display='none';">
-        Mostrar Formulario de Quiniela
+        <strong>Mostrar Formulario de Quiniela</strong>
       </button>
     </div>
+
     <div id="formularioQuiniela" style="display: none;">
-      <h1>Quiniela Mundial de Clubes 2025</h1>
       <input type="text" id="nombre" placeholder="Nombre del participante" />
       <input type="date" id="fecha" placeholder="Fecha de registro" />
       <div class="bracket" id="contenedor"></div>
       <button onclick="guardarQuiniela()">Guardar Quiniela</button>
       <div id="resultado"></div>
     </div>
+
   </div>
 
   <script src="script.js"></script>
