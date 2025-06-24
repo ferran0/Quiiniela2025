@@ -15,7 +15,7 @@ const fases = {
 };
 
 const logos = {
-  "Inter Miami": "assets/inter_miami.png",
+  "Palmeiras": "assets/inter_miami.png",
   "Botafogo": "assets/botafogo.png",
   "Bayern Munchen": "assets/bayern_munchen.png",
   "Flamengo": "assets/flamengo.png",
