@@ -1,6 +1,6 @@
 const fases = {
   octavos: [
-    ['FC Porto', 'Botafogo'],
+    ['Botafogo', 'Botafogo'],
     ['Bayern Munchen', 'Chelsea FC'],
     ['Inter de Milan', 'Fluminense'],
     ['Manchester City', 'Al Hilal SFC'],
