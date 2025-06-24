@@ -1,6 +1,6 @@
 const fases = {
   octavos: [
-    ['Botafogo', 'Palmeiras'],
+    ['Botafogo', 'Chelsea FC'],
     ['Bayern Munchen', 'Chelsea FC'],
     ['Inter de Milan', 'Fluminense'],
     ['Manchester City', 'Al Hilal SFC'],
@@ -15,7 +15,7 @@ const fases = {
 };
 
 const logos = {
-  "Palmeiras": "assets/inter_miami.png",
+  "Inter Miami": "assets/inter_miami.png",
   "Botafogo": "assets/botafogo.png",
   "Bayern Munchen": "assets/bayern_munchen.png",
   "Flamengo": "assets/flamengo.png",
