@@ -6,7 +6,7 @@ const fases = {
     ['Manchester City', 'Al Hilal SFC'],
     ['Paris Saint-Germain', 'Inter Miami'],
     ['Flamengo', 'Bayern Munchen'],
-    ['Borussia Dortmund', 'River Plate'],
+    ['Borussia Dortmund', 'Monterrey'],
     ['Real Madrid CF', 'Juventus FC']
   ],
   cuartos: [[], [], [], []],
@@ -28,7 +28,7 @@ const logos = {
   "Chelsea FC": "assets/chelsea.png",
   "SL Benfica": "assets/benfica.png",
   "Borussia Dortmund": "assets/borussia_dortmund.png",
-  "River Plate": "assets/river_plate.png",
+  "Monterrey": "assets/monterrey.png",
   "Real Madrid CF": "assets/real_madrid.png",
   "Juventus FC": "assets/juventus.png"
 };
