@@ -6,8 +6,8 @@ const fases = {
     ['Manchester City', 'Al Hilal SFC'],
     ['Paris Saint-Germain', 'Inter Miami'],
     ['Flamengo', 'Bayern Munchen'],
-    ['Borussia Dortmund', 'Monterrey'],
-    ['Real Madrid CF', 'Juventus FC']
+    ['Real Madrid CF', 'Juventus FC'],
+    ['Borussia Dortmund', 'Juventus FC']
   ],
   cuartos: [[], [], [], []],
   semis: [[], []],
